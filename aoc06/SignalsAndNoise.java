@@ -26,7 +26,6 @@ public class SignalsAndNoise {
 		int index;
 		line=reader.readLine();
 		while ((line=reader.readLine())!=null) {
-			System.out.println(line);
 			index = 0;
 			for (char a : line.toCharArray()) {
 				if (index<inputArr.length) {
@@ -45,13 +44,11 @@ public class SignalsAndNoise {
 		Arrays.sort(arr);
 		int counter = 0;
 		char letter = arr[0];
-		System.out.println(line);
 		for (char a : arr) {
 			if (letter == a)
 				counter++;
 			else {
 				map.put(letter, counter);
-				System.out.println(letter + ":" + counter);
 				counter=1;
 				letter=a;
 			}
