@@ -55,4 +55,5 @@ After you swipe your card, what code is the screen trying to display?
 
 Your puzzle answer was EFEYKFRFIJ.
 
-PUZZLE INPUT w commands.txt
+PUZZLE INPUT:
+> w commands.txt
