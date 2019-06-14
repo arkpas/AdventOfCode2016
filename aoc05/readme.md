@@ -1,6 +1,7 @@
 Program obejmuje tylko rozwiązanie drugiej części zadania, gdyż po rozwiązaniu pierwszej części został on zmodyfikowany.
 
 --- Day 5: How About a Nice Game of Chess? ---
+
 You are faced with a security door designed by Easter Bunny engineers that seem to have acquired most of their security knowledge
 by watching hacking movies.
 
@@ -27,6 +28,7 @@ Given the actual Door ID, what is the password?
 Your puzzle answer was 2414bc77.
 
 --- Part Two ---
+
 As the door slides open, you are presented with a second door that uses a slightly more inspired security mechanism. 
 Clearly unimpressed by the last version (in what movie is the password decrypted in order?!), 
 the Easter Bunny engineers have worked out a better solution.
