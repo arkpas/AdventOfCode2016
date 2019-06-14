@@ -24,7 +24,6 @@ public class FirewallRules {
 		Range global = null;
 		while ((input = reader.readLine())!=null) {
 			Range inputRange = new Range(input);
-			System.out.println(inputRange);	
 			if (inputRange.from()==0)
 				global = new Range(input);
 			else
@@ -37,7 +36,6 @@ public class FirewallRules {
 		Collections.sort(ranges);
 		
 		while (!ranges.isEmpty()) {
-			System.out.println("Global: " + global.toString());
 			if (global.extendRange(ranges.get(0)))
 				ranges.remove(0);
 		}
