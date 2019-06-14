@@ -1,4 +1,5 @@
 --- Day 4: Security Through Obscurity ---
+
 Finally, you come across an information kiosk with a list of rooms. Of course, the list is encrypted and full of decoy data, 
 but the instructions to decode the list are barely hidden nearby. Better remove the decoy data first.
 
@@ -22,6 +23,7 @@ What is the sum of the sector IDs of the real rooms?
 Your puzzle answer was 245102.
 
 --- Part Two ---
+
 With all the decoy data out of the way, it's time to decrypt this list and get moving.
 
 The room names are encrypted by a state-of-the-art shift cipher, which is nearly unbreakable without the right software. 
@@ -37,4 +39,5 @@ What is the sector ID of the room where North Pole objects are stored?
 
 Your puzzle answer was 324.
 
-PUZZLE INPUT w pliku rooms.txt
+PUZZLE INPUT:
+> w pliku rooms.txt
