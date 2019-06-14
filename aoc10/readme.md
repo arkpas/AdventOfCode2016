@@ -38,4 +38,5 @@ What do you get if you multiply together the values of one chip in each of outpu
 
 Your puzzle answer was 37789.
 
-PUZZLE INPUT w bots.txt
+PUZZLE INPUT:
+> w bots.txt
