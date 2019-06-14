@@ -43,3 +43,6 @@ As you head down the fire escape to the monorail, you notice it didn't start; re
 If you instead initialize register c to be 1, what value is now left in register a?
 
 Your puzzle answer was 9227647.
+
+PUZZLE INPUT:
+> w instructions.txt
