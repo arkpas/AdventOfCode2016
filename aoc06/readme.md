@@ -1,6 +1,7 @@
 TYLKO PART2!
 
 --- Day 6: Signals and Noise ---
+
 Something is jamming your communications with Santa. Fortunately, your signal is only partially jammed, and protocol in situations
 like this is to switch to a simple repetition code to get the message through.
 
@@ -35,6 +36,7 @@ Given the recording in your puzzle input, what is the error-corrected version of
 Your puzzle answer was gyvwpxaz.
 
 --- Part Two ---
+
 Of course, that would be the message - if you hadn't agreed to use a modified repetition code instead.
 
 In this modified code, the sender instead transmits what looks like random data, but for each character, 
@@ -50,4 +52,5 @@ what is the original message that Santa is trying to send?
 
 Your puzzle answer was jucfoary.
 
-PUZZLE INPUT w input.txt
+PUZZLE INPUT:
+> w input.txt
