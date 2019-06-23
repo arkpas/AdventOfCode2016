@@ -1,4 +1,4 @@
-Na razie tylko PART 1 
+
 
 --- Day 22: Grid Computing ---
 
@@ -25,6 +25,7 @@ Your puzzle answer was 987.
 The first half of this puzzle is complete! It provides one gold star: *
 
 --- Part Two ---
+
 Now that you have a better understanding of the grid, it's time to get to work.
 
 Your goal is to gain access to the data which begins in the node with y=0 and the highest x (that is, the node in the top-right corner).
@@ -107,3 +108,8 @@ Finally, we can access the goal data by moving the it from node-y0-x1 to node-y0
 So, after 7 steps, we've accessed the data we want. Unfortunately, each of these moves takes time, and we need to be efficient:
 
 What is the fewest number of steps required to move your goal data to node-x0-y0?
+
+Your puzzle answer was 220.
+
+PUZZLE INPUT:
+> w pliku nodes.txt
