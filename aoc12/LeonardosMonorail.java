@@ -8,70 +8,84 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LeonardosMonorail {
-	static HashMap<Character, Integer> map = new HashMap<>();
+	private static HashMap<Character, Integer> map = new HashMap<>();
 	
-	public static void main (String[] args) throws IOException {
+	public static void main (String[] args){
+		double time = System.currentTimeMillis();
+		try (BufferedReader reader = new BufferedReader (new InputStreamReader (new FileInputStream("src/aoc12/instructions.txt"), "utf-8")))
+			{
 		
-		BufferedReader reader = new BufferedReader (new InputStreamReader (new FileInputStream("src/aoc12/instructions.txt"), "utf-8"));
-		int a=0,b=0,c=1,d=0;
-		map.put('a', a);
-		map.put('b', b);
-		map.put('c', c);
-		map.put('d', d);
-		
-		reader.mark(1);
-		if ((int)reader.read()<200)
-			reader.reset();
-		
-		String line = "";
-		ArrayList<String> instructions = new ArrayList<>();
-		
-		while ((line=reader.readLine())!=null) {
-			instructions.add(line);	
-		}
-		execute(instructions);
-		System.out.println(Integer.parseInt("-50"));
-		
-		reader.close();
+			reader.mark(1);
+			if ((int)reader.read()<200)
+				reader.reset();
+			
+			String line = "";
+			ArrayList<Instruction> instructions = new ArrayList<>();
+			
+			while ((line=reader.readLine())!=null) {
+				Instruction ins = new Instruction(line);
+				instructions.add(ins);
+			}
+			
+			System.out.println("Part 1: ");
+			map.put('a', 0);
+			map.put('b', 0);
+			map.put('c', 0);
+			map.put('d', 0);
+			execute(instructions);
+			
+			System.out.println("Part 2: ");
+			map.put('a', 0);
+			map.put('b', 0);
+			map.put('c', 1);
+			map.put('d', 0);
+			
+			execute(instructions);
+			
+			time = System.currentTimeMillis() - time;
+			System.out.printf("Time: %.4f", time/1000);
+			}
+		catch (IOException e) {e.printStackTrace();}
+
 	}
 	
-	public static void execute (ArrayList<String> instructions) {
+	public static void execute (ArrayList<Instruction> instructions) {
 		int position = 0;
 		
 		while (position<instructions.size()) {
-			System.out.println(map.get('a') + "pos: " + position);
-			String[] split = instructions.get(position).split(" ");
-			switch (split[0]) {
+			Instruction instruction = instructions.get(position);
+
+			switch (instruction.getCommand()) {
 				case "inc": {
-					map.put(split[1].charAt(0), map.get(split[1].charAt(0))+1);
+					map.put(instruction.getChar1(), map.get(instruction.getChar1())+1);
 					position++;
 					break;
 				}
 				
 				case "dec": {
-					map.put(split[1].charAt(0), map.get(split[1].charAt(0))-1);
+					map.put(instruction.getChar1(), map.get(instruction.getChar1())-1);
 					position++;
 					break;
 				}
 				case "cpy": {
-					if (Character.isLetter(split[1].charAt(0)))
-						map.put(split[2].charAt(0),map.get(split[1].charAt(0)));
+					if (instruction.isArg1Letter())
+						map.put(instruction.getChar2(),map.get(instruction.getChar1()));
 					else 
-						map.put(split[2].charAt(0),Integer.parseInt(split[1]));
+						map.put(instruction.getChar2(),instruction.getInt1());
 					position++;
 					break;
 				}
 				
 				case "jnz": {
-					if (Character.isLetter(split[1].charAt(0))) {
-						if (map.get(split[1].charAt(0))>0)
-							position+=Integer.parseInt(split[2]);
+					if (instruction.isArg1Letter()) {
+						if (map.get(instruction.getChar1())>0)
+							position+=instruction.getInt2();
 						else
 							position++;
 					}
 					else 
-						if (Integer.parseInt(split[1])>0)
-							position+=Integer.parseInt(split[2]);
+						if (instruction.getInt1()>0)
+							position+=instruction.getInt2();
 						else 
 							position++;
 					break;
@@ -80,7 +94,7 @@ public class LeonardosMonorail {
 			}
 
 		}
-		
+		System.out.println("A: " + map.get('a'));
 			
 	}
 		
